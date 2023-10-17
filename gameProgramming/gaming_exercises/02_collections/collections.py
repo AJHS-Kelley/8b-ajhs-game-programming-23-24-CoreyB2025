@@ -9,7 +9,10 @@ print(playerInventory)
 
 when len(playerInventory) > 5:
     item = input("What item do you want to remove to the imventory?\n")
-    playerInventory.renive(item)
+    playerInventory.remove(item)
+
+playerInventory.sort()
+print
 
 
 
