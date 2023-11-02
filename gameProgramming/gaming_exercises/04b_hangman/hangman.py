@@ -50,9 +50,40 @@ def displayBoard(missedLetters, correctLetters, secretWord):
     print(HANGMAN_BOARD[len(missedLetters)])
     print()
 
-    print('missedLetters:', end = '')
+    print('missedLetters:', end = ' ')
     for eachLetter in missedLetters:
-        print('eachLetter:', end = '')
+        print('eachLetter:', end = ' ')
+      print()
+      
+      blanks = '_' * len(secretWord)
+
+      # Replace Banks with Correct Letters
+      for i in range(len(secretWord)):
+            if secretWord[i] if correctLetters: 
+                blanks = blanks[:i] + secretWord[i] + blanks[i+1:]
+
+      for letter in blanks:
+          print(letter end = ' ')
+      print()
+
+
+def getGuess(alreadyGuessed):
+      while True: 
+            print('Please guess a letter and press enter.')
+            guess = input
+            guess = guess.lower()
+            if len(guess) != 1:
+                  print('Please enter a single letter.')
+            elif guess in alreadyGuessed:
+                  print('Letter has been guesses already, try again.')
+            elif guess not in 'abcdefghijklmnopqrstuvwxyz':
+                  print('please guess a LETTER from the English alphabet.')
+            else:
+                  return guess
+
+
+
+
 # i = 0
 # while i < 50:
 #    word = getRandomWord(words)
