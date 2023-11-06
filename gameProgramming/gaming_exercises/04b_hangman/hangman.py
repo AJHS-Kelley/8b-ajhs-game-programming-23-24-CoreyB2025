@@ -1,6 +1,16 @@
 # Hangman Game by Corey Battle, v0.0
 import random
-words = 'apple fun run sun bum hum calm pat rice cool potato tomato gringo missle pasta plane insane checker blaster infamous mitochondria phytoplankton piemountaindog epitome coincidental'.split()
+#words = 'apple fun run sun bum hum calm pat rice cool potato tomato gringo missle pasta plane insane checker blaster infamous mitochondria phytoplankton piemountaindog epitome coincidental'.split()
+# DICTIONARY VERSION
+# Stored in Key:Value Pairs.
+# Actual Dictionary Word (Key) : Value (Definition)
+# Uses {} to specify a dictionary.
+words = {'Colors': 'red orange yello purple lavender indigo violet fuschia teal garnet gold black white siler gold'.split(),
+         'Animals': 'cat cow dog moose goose duck fish wombat owl wolverine giraffe hippo lion alligator'.split(),
+         'Shapes': 'square triangle circle rhombus parallelogram trapezoid diamond'.split(),
+         'Foods': 'hamburger cheeseburger pizza hotdog sausage tomato waffle pancake eggs chips steak'.split()}
+
+
 
 # VARIABLE_NAMES in ALL-CAPS ARE CONSTANTS AND NOT MEANT TO CHANGE!
 HANGMAN_BOARD = ['''
@@ -46,6 +56,12 @@ def getRandomWord(wordList): # Return a random word from the list.
     # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
     return wordList[wordIndex]
 
+# Pick Word from Dictionary
+def getRandomWord(wordDict): # Return a random word from the list.
+    wordIndex = random.randint(0, len(wordList) -1)
+    # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
+    return wordList[wordIndex]
+
 def displayBoard(missedLetters, correctLetters, secretWord):
     print(HANGMAN_BOARD[len(missedLetters)])
     print()
@@ -53,7 +69,7 @@ def displayBoard(missedLetters, correctLetters, secretWord):
     print('missedLetters:', end = ' ')
     for eachLetter in missedLetters:
         print('eachLetter:', end = ' ')
-      print() 
+      print()
       
       blanks = '_' * len(secretWord)
 
