@@ -118,9 +118,6 @@ if difficulty == 'H': # HARD
       del HANGMAN_BOARD[5]
       del HANGMAN_BOARD[3]
 
-
-
-
 missedLetters = ''
 correctLetters = ''
 secretWord = getRandomWord(words)
@@ -128,6 +125,7 @@ gameIsDone = False
 
 # Main Game Loop
 while True:
+      print('The secret word is from the ' + secretSet + ' category.\n')
       displayBoard(missedLetters, correctLetters, secretWord)
 
       guess = getGuess(missedLetters + correctLetters)
