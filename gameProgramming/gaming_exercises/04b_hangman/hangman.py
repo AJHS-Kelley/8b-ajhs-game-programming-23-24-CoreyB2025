@@ -51,10 +51,10 @@ HANGMAN_BOARD = ['''
     ======''']
                  
 # Pick Word from List
-def getRandomWord(wordList): # Return a random word from the list.
-    wordIndex = random.randint(0, len(wordList) -1)
-    # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
-    return wordList[wordIndex]
+# def getRandomWord(wordList): # Return a random word from the list.
+#     wordIndex = random.randint(0, len(wordList) -1)
+#     # len(listName) - 1 is EXTREMELY COMMON FOR WORKING WITH LISTS.
+#     return wordList[wordIndex]
 
 # Pick Word from Dictionary
 def getRandomWord(wordDict): # Return a random word from the list.
