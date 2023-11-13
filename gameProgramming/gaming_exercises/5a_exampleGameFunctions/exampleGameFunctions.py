@@ -20,3 +20,8 @@ def shootBall(shotQuality, shotStrength, temperature):
         shotMade = False
 
 shootBall(5.6, 72, 68)
+
+def chooseMode(easy, medium, hard):
+    print("Player1 Please choose a mode!")
+if balls = 5 and goal = fire:
+    modeChosen = 'medium'
