@@ -13,15 +13,39 @@ def functionThree(param1 = "Default Value"):
 def functionFour(param1, param2, param3):
     pass
 
-def shootBall(shotQuality, shotStrength, temperature):
-    if shotQuality > 6.0 and shotStrength >= 76 and temperature >= 60:
-        shotMade = True
-    elif shotQuality > 5.0 and shotStrentgh >= 50 and temperature <= 55:
-        shotMade = False
+# Global Variable
+width = 700
+height = 550
+clock = 60
 
-shootBall(5.6, 72, 68)
+def getPoleY(baseY):
+    return random.randint(100, baseY - 200)
 
-def chooseMode(easy, medium, hard):
-    print("Player1 Please choose a mode!")
-if balls = 5 and goal = fire:
-    modeChosen = 'medium'
+
+def main():
+    gameOn = True
+    baseX = 0
+    baseY = height - 60
+    ballX = 120
+    ballY = baseY - 60
+    gravity = 10
+    bouncing = 25
+    poleX = 400
+    poleY = getPoleY(baseY)
+    speed = 0
+    gameOver = False
+    basketY = random_Basket(poleY, baseY)
+    basket_Score = 0
+    score = 0
+
+    # Bouncing
+    ballY -= bouncing
+    bouncing -= 1
+    ballY += gravity
+    if(ballY > baseY - 20):
+        bouncing = 25
+    
+    clock.tick(60)
+
+
+            
