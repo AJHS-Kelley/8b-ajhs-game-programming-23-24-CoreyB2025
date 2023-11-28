@@ -37,6 +37,8 @@ def main():
     basketY = random_Basket(poleY, baseY)
     basket_Score = 0
     score = 0
+    speed_Accelerating = False
+
 
     # Bouncing
     ballY -= bouncing
@@ -47,5 +49,9 @@ def main():
     
     clock.tick(60)
 
+    # Accelerating
+    speed += 0.001
 
+    # Speeding up score
+    score += int(speed)
             
