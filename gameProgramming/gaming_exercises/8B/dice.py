@@ -1,7 +1,7 @@
 # Dice Rolling Module By Corey Battle, v0.0
 import random
 
-def roll(numDice, sizeDice):
+def roll(numDice, sizeDice): # Verified Working 12-14-23
     numRolled = 0
     sum = 0
     while numRolled < numDice:
@@ -12,7 +12,7 @@ def roll(numDice, sizeDice):
         numRolled += 1
     return sum
 
-def display(numDice, sizeDice):
+def display(numDice, sizeDice): # Verified Working 12-14-23
     numRolled = 0
     sum = 0
     while numRolled < numDice:
@@ -23,6 +23,12 @@ def display(numDice, sizeDice):
         numRolled += 1
     return sum
 
+def isDoubles(roll1, roll2):
+    if roll1 == roll2: 
+        isDoubles = True
+    else: 
+        isDoubles = False
+    return isDoubles
 
 
 
