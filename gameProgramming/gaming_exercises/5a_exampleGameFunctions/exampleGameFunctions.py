@@ -1,4 +1,5 @@
 # Example Game Functions Project, Corey Battle, v0.0
+# 12-08-23 I called on you twice to review code but you were too busy watching videos on your phone.
 import random
 
 def functionOne():
