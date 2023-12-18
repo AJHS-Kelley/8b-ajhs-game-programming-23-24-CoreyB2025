@@ -35,13 +35,17 @@ def shotMade():
     print("You chose:", userChoice)
 
     if userChoice == computerChoice:
-        print("you and the computer both got over the hurdle!")
+        print("you and the computer both made a shot!")
     elif (userChoice == 'r' and computerChoice == 'z') or\
          (userChoice == 't' and computerChoice == 'r') or\
          (userChoice == 'z' and computerChoice == 't'):
         print("you got made the shot and the computer didn't, wow!")
     else:
         print("You missed the shot and the computer didn't, imbecile")
+
+shotMade()
+
+playAgain()
 
 shotMade()
 
