@@ -21,3 +21,16 @@ def startGame():
     else:
         print("No, leave me alone")
 
+def shotMade():
+    choices = ['r', 't', 'z']
+    computerChoice = random.choice(choices)
+
+    userChoice = input("enter one of the folowing(R,T,Z);\n").lower()
+
+    if userChoice not in choices:
+        print("Pick a choice buddy")
+        shotMade()
+
+    print("CPU choice:", computerChoice)
+    print("You chose:", userChoice)
+
