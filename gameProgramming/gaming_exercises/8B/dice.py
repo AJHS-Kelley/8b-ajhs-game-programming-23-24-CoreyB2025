@@ -31,11 +31,11 @@ def isDoubles(roll1, roll2):
     return isDoubles
 
 def isExploding(roll, sizeRoll):
-    if roll == sizeRoll
+    if roll == sizeRoll:
         isExploding = True
     else:
         isExpanding = False
-    return isExplodimng
+    return isExploding
 
 
 
