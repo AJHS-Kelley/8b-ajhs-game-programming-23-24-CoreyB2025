@@ -6,3 +6,56 @@ import sys, random, pygame
 from pygame.locals import *
 # Allows us to call functions from pygame using just the function name instead of module.function()
 # Example: We can use draw() instead of pygame.draw()
+
+# Constants for Game Board
+BOARDWIDTH = 4 # COLUMNS
+BOARDHEIGHT = 4 # ROWS
+TILESIZE = 80 # MEASURED IN PIXELS
+WINDOWWIDTH = 640 # MEASURED IN PIXELS
+WINDOWWEIGHT = 480 # MEASURED IN PIXELS
+FPS = 30 # This is a maximum value! Won't make a slow computer run faster.
+BLANK = None
+
+# COLOR VALUES IN (R, G, B) format.
+# 0 = No Value, 255 = Max Value
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+BRIGHTBLUE 0 (0, 50, 255)
+DARKTURQUOISE = (3, 54, 73)
+GREEN = (0, 204, 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
