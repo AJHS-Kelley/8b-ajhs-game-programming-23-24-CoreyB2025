@@ -68,7 +68,23 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
     else: # Slowest Time, Lowest Score
         score += 250000
 
-
+scoreMulti = 0.0
+    if len(rnaSequence) >+ 30: #Long
+        scoreMulti = 5.0
+    elif len(rnaSequence) >= 25: # Long
+        scoreMulti = 4.0
+    if len(rnaSequence) >+ 20: #Long
+        scoreMulti = 3.0
+    if len(rnaSequence) >+ 15: #Long
+        scoreMulti = 5.0
+    elif len(rnaSequence) >= 5:
+        scoreMulti = 1.0
+    else: #Short
+        scoreMulti = 0.5
+    # Increase
+    # Decrease
+    score *= scoreMulti
+    return score
 
 
 
