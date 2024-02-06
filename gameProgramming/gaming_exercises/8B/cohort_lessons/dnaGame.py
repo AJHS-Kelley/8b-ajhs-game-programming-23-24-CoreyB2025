@@ -36,3 +36,29 @@ print(f"The DNA Sequence is {dnaSequence}.\n")
     # Tuples are ORDERED -- you can reference elements with the index.
     # Tuples are UNCHANGEABLE -- you cannot add, modify, or delete after creating
     # Tuples CAN have duplicate values.
+
+def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
+    isMatch = False
+    if len(dnaSequence) != len(rnaSequence):
+        print("The sequences are diffrent lengths and cannot match.\n")
+        return isMatch
+    for dnaBase, rnaBase in zip(dnaSequence, rnaSequence):
+        if dnaBase == "A" and rnaBase == "U":
+            isMatch = True
+        elif dnaBase == "C" and rnaBase == "G":
+            isMatch = True
+        elif dnaBase == "G" and rnaBase == "C":
+            isMatch = True
+        elif dnaBase == "T" and rnaBase == "A":
+            isMatch = True
+        else:
+            print ("error message about no match.\n")
+    return isMatch
+
+
+
+
+
+
+
+
