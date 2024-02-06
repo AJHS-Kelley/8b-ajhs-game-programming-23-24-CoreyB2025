@@ -55,6 +55,23 @@ def verifySequence(dnaSequence: str, rnaSequence: str) -> bool:
             print ("error message about no match.\n")
     return isMatch
 
+def calcScore(rnaSequence: str, rnaTime: float) -> int:
+    score = 0
+    if rnaTime < 1.0:
+        score += 1000000
+    elif rnaTime < 5.0:
+        score += 900000
+    elif rnaTime < 15.0:
+        score += 700000
+    elif rnaTime < 25.0:
+        score += 500000
+    else: # Slowest Time, Lowest Score
+        score += 250000
+
+
+
+
+
 
 
 
