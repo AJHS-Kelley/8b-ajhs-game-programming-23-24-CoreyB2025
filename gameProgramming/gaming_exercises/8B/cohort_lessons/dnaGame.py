@@ -1,4 +1,5 @@
-#dnaGame Corey Battle, v0.
+# dnaGame Corey Battle, v0.0
+
 
 # Import Entire Modules -- Get the whole tool box.
 import time, datetime 
