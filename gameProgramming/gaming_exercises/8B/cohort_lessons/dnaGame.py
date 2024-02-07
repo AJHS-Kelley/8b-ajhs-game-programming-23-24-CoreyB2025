@@ -1,4 +1,4 @@
-dnaGame Corey Battle, v0.
+#dnaGame Corey Battle, v0.
 
 # Import Entire Modules -- Get the whole tool box.
 import time, datetime 
@@ -24,8 +24,8 @@ def genDNA() -> str:
     return dnaSequence
 
 def doTranscription(dnaSequence: str) -> tuple:
-
-print(f"The DNA Sequence is {dnaSequence}.\n")
+    
+    print(f"The DNA Sequence is {dnaSequence}.\n")
     print("You will now generate the RNA sequence that would match.\n")
     print("Please remember, in the RNA sequence U pairs with A from the DNA sequence.")
     rnaStart = time.time() #time.time() returns the number of seconds since 00:00:00 UTC Jan. 01, 1970
@@ -68,7 +68,7 @@ def calcScore(rnaSequence: str, rnaTime: float) -> int:
     else: # Slowest Time, Lowest Score
         score += 250000
 
-scoreMulti = 0.0
+    scoreMulti = 0.0
     if len(rnaSequence) >+ 30: #Long
         scoreMulti = 5.0
     elif len(rnaSequence) >= 25: # Long
@@ -104,19 +104,9 @@ def saveScore(dnaSequence: str, rnaSequence: str, rnaTime: float, score: int) ->
     saveData.write(f"{datetime.datetime.now()}")
     saveData.close()
 
+
 dna = genDNA()
 rna = doTranscription(dna)
 if verifySequence(dna, rna[0]):
     score = (calcScore(rna[0], rna[1]))
     saveScore(dna, rna[0], rna[1], score)
-
-
-
-
-
-
-
-
-
-
-
