@@ -1,4 +1,5 @@
-dnaGame Corey Battle, v0.
+# dnaGame Corey Battle, v0.
+# Code crashes immediately when trying to run program. Please fix bugs and resubmit. 
 
 # Import Entire Modules -- Get the whole tool box.
 import time, datetime 
