@@ -13,5 +13,13 @@ Objectives / Enemies / Obstacles:
 
 Items / Equipment / Objects:
     --
+    --
+
+Difficulty Changes:
+    --
+
+Controls:
+    --
+
 
 
