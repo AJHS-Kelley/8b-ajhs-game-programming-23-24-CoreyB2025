@@ -77,6 +77,29 @@ def wait_for_key():
                 waiting = False
 
 
+def show_text_on_screen(text, font_size, y_position):
+    font = pygame.font.Font(None, font_size)
+    text_render = font.render(text, True, WHITE)
+    text_rect = text_render.get_rect(center=(WIDTH // 2, y_position))
+    screen.blit(text_render, text_rect)
+
+
+def change_platform_color():
+    return (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+# Main game loop
+start_screen()
+game_running = True
+
+
+while game_running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game_running = False
+
+
+    keys = pygame.key.get_pressed()
+
+
 
 
 
