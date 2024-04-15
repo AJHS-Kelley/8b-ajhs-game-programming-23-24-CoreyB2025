@@ -30,8 +30,9 @@ myString =""
 for i in range(len(order)): 
     if order [i] == "A"
         myString += str(a) + " "
-    elif: 
+    elif:
+
 
     else:
-
-print(myString)
+    
+    print(myString)
