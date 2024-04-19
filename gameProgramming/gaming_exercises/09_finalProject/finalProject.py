@@ -140,4 +140,19 @@ while game_running:
         ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]  # Randomize the ball speed
         platform_color = change_platform_color()
 
+   # Check if the ball falls off the screen
+    if ball_pos[1] >= HEIGHT:
+        # Decrease lives
+        lives -= 1
+        if lives == 0:
+            game_over_screen()
+            start_screen()  # Restart the game after game over
+            score = 0
+            lives = 3
+            current_level = 1
+        else:
+            # Reset the ball position
+            ball_pos = [WIDTH // 2, HEIGHT // 2]
+            # Randomize the ball speed
+            ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]
 
