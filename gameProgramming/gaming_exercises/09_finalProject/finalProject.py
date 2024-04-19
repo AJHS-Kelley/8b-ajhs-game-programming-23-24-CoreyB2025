@@ -156,3 +156,18 @@ while game_running:
             # Randomize the ball speed
             ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]
 
+   # Clear the screen
+    screen.fill(BLACK)
+
+
+    # Draw the ball
+    pygame.draw.circle(screen, BLUE, (int(ball_pos[0]), int(ball_pos[1])), BALL_RADIUS)
+
+
+    # Draw the platform
+    pygame.draw.rect(screen, platform_color, (int(platform_pos[0]), int(platform_pos[1]), PLATFORM_WIDTH, PLATFORM_HEIGHT))
+
+
+    # Display information
+    info_line_y = 10  # Adjust the vertical position as needed
+    info_spacing = 75  # Adjust the spacing as needed
