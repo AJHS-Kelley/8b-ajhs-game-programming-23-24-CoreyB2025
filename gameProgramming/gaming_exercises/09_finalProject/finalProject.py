@@ -35,7 +35,7 @@ ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]  # Faster starting spe
 platform_pos = [WIDTH // 2 - PLATFORM_WIDTH // 2, HEIGHT - PLATFORM_HEIGHT - 10]
 platform_speed = 10
 score = 0
-lives = 3
+lives = 4
 current_level = 1
 platform_color = ORANGE  # Initialize platform color
 # Functions for screens
@@ -148,7 +148,7 @@ while game_running:
             game_over_screen()
             start_screen()  # Restart the game after game over
             score = 0
-            lives = 3
+            lives = 4
             current_level = 1
         else:
             # Reset the ball position
