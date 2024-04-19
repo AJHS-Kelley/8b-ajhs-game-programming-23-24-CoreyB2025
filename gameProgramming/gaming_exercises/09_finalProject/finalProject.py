@@ -100,6 +100,28 @@ while game_running:
     keys = pygame.key.get_pressed()
 
 
+# Move the platform
+    platform_pos[0] += (keys[pygame.K_RIGHT] - keys[pygame.K_LEFT]) * platform_speed
+    platform_pos[1] += (keys[pygame.K_DOWN] - keys[pygame.K_UP]) * platform_speed
+
+
+    # Ensure the platform stays within the screen boundaries
+    platform_pos[0] = max(0, min(platform_pos[0], WIDTH - PLATFORM_WIDTH))
+    platform_pos[1] = max(0, min(platform_pos[1], HEIGHT - PLATFORM_HEIGHT))
+
+
+    # Move the ball
+    ball_pos[0] += ball_speed[0]
+    ball_pos[1] += ball_speed[1]
+
+
+    # Bounce off the walls
+    if ball_pos[0] <= 0 or ball_pos[0] >= WIDTH:
+        ball_speed[0] = -ball_speed[0]
+
+
+    if ball_pos[1] <= 0:
+        ball_speed[1] = -ball_speed[1]
 
 
 
