@@ -124,6 +124,20 @@ while game_running:
         ball_speed[1] = -ball_speed[1]
 
 
+ # Check if the ball hits the platform
+    if (
+        platform_pos[0] <= ball_pos[0] <= platform_pos[0] + PLATFORM_WIDTH
+        and platform_pos[1] <= ball_pos[1] <= platform_pos[1] + PLATFORM_HEIGHT
+    ):
+        ball_speed[1] = -ball_speed[1]
+        score += 1
 
+
+    # Check if the player advances to the next level
+    if score >= current_level * 5:
+        current_level += 1
+        ball_pos = [WIDTH // 2, HEIGHT // 2]
+        ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]  # Randomize the ball speed
+        platform_color = change_platform_color()
 
 
