@@ -161,7 +161,7 @@ while game_running:
 
 
     # Draw the ball
-    pygame.draw.circle(screen, BLUE, (int(ball_pos[0]), int(ball_pos[1])), BALL_RADIUS)
+    pygame.draw.circle(screen, WHITE, (int(ball_pos[0]), int(ball_pos[1])), BALL_RADIUS)
 
 
     # Draw the platform
@@ -171,3 +171,9 @@ while game_running:
     # Display information
     info_line_y = 10  # Adjust the vertical position as needed
     info_spacing = 75  # Adjust the spacing as needed
+
+       # Draw the score in an orange rectangle at the top left
+    score_text = font.render(f"Score: {score}", True, WHITE)
+    score_rect = score_text.get_rect(topleft=(10, info_line_y))
+    pygame.draw.rect(screen, ORANGE, score_rect.inflate(10, 5))
+    screen.blit(score_text, score_rect)
