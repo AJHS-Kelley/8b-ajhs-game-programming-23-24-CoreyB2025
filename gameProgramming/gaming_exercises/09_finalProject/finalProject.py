@@ -41,8 +41,9 @@ platform_color = ORANGE  # Initialize platform color
 # Functions for screens
 def start_screen():
     screen.fill(WHITE)
-    show_text_on_screen("Bouncing Ball Game", 50, HEIGHT // 4)
-    show_text_on_screen("Press any key to start...", 30, HEIGHT // 3)
+    show_text_on_screen("WELCOME!", 60, HEIGHT // 7)
+    show_text_on_screen("Ball Container", 50, HEIGHT // 4)
+    show_text_on_screen("Push to start like a C class Benz...", 30, HEIGHT // 3)
     show_text_on_screen("Move the platform with arrow keys...", 30, HEIGHT // 2)
     pygame.display.flip()
     wait_for_key()
@@ -179,4 +180,8 @@ while game_running:
     screen.blit(score_text, score_rect)
 
 
- 
+ # Draw the level indicator in a light-blue rectangle at the top left (next to the score)
+    level_text = font.render(f"Level: {current_level}", True, WHITE)
+    level_rect = level_text.get_rect(topleft=(score_rect.topright[0] + info_spacing, info_line_y))
+    pygame.draw.rect(screen, LIGHT_BLUE, level_rect.inflate(10, 5))
+    screen.blit(level_text, level_rect)
