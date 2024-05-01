@@ -107,12 +107,13 @@ while game_running:
 # Move the platform
     platform_pos[0] += (keys[pygame.K_RIGHT] - keys[pygame.K_LEFT]) * platform_speed
     platform_pos[1] += (keys[pygame.K_DOWN] - keys[pygame.K_UP]) * platform_speed
-
+    logData.write(f"platform_speed: {platform_speed}\n")
+    
 
     # Ensure the platform stays within the screen boundaries
     platform_pos[0] = max(0, min(platform_pos[0], WIDTH - PLATFORM_WIDTH))
     platform_pos[1] = max(0, min(platform_pos[1], HEIGHT - PLATFORM_HEIGHT))
-
+    
 
     # Move the ball
     ball_pos[0] += ball_speed[0]
@@ -145,7 +146,7 @@ while game_running:
         ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]  # Randomize the ball speed
         platform_color = change_platform_color()
 
-   # Check if the ball falls off the screen
+    # Check if the ball falls off the screen
     if ball_pos[1] >= HEIGHT:
         # Decrease lives
         lives -= 1
@@ -153,7 +154,7 @@ while game_running:
             game_over_screen()
             start_screen()  # Restart the game after game over
             score = 0
-            lives = 4
+            lives = 5
             current_level = 1
         else:
             # Reset the ball position
