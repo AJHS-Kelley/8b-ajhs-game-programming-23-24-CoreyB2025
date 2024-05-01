@@ -4,6 +4,9 @@ import pygame
 import sys
 import random
 
+# Debugging Logs
+logFile = "ballContainerDebugLog.txt"
+logData = open(logFile, "w",) 
 
 # Constants
 WIDTH, HEIGHT = 800, 600
@@ -180,8 +183,9 @@ while game_running:
     screen.blit(score_text, score_rect)
 
 
- # Draw the level indicator in a light-blue rectangle at the top left (next to the score)
+    # Draw the level indicator in a light-blue rectangle at the top left (next to the score)
     level_text = font.render(f"Level: {current_level}", True, WHITE)
     level_rect = level_text.get_rect(topleft=(score_rect.topright[0] + info_spacing, info_line_y))
     pygame.draw.rect(screen, LIGHT_BLUE, level_rect.inflate(10, 5))
     screen.blit(level_text, level_rect)
+
