@@ -25,7 +25,7 @@ pygame.init()
 
 # Create the screen
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Bouncing Ball Game")
+pygame.display.set_caption("Ball Container")
 font = pygame.font.Font(None, 36)
 
 
@@ -135,7 +135,8 @@ while game_running:
     ):
         ball_speed[1] = -ball_speed[1]
         score += 1
-
+    logData.write(f"PLATFORM_WIDTH: {PLATFORM_WIDTH}\n")
+    logData.write(f"PLATFORM_HEIGHT: {PLATFORM_HEIGHT}\n")
 
     # Check if the player advances to the next level
     if score >= current_level * 5:
@@ -189,3 +190,20 @@ while game_running:
     pygame.draw.rect(screen, LIGHT_BLUE, level_rect.inflate(10, 5))
     screen.blit(level_text, level_rect)
 
+    # Draw the lives in a red rectangle at the top left (next to the level)
+    lives_text = font.render(f"Lives: {lives}", True, WHITE)
+    lives_rect = lives_text.get_rect(topleft=(level_rect.topright[0] + info_spacing, info_line_y))
+    pygame.draw.rect(screen, RED, lives_rect.inflate(10, 5))
+    screen.blit(lives_text, lives_rect)
+
+
+    # Update the display
+    pygame.display.flip()
+
+
+    # Control the frame rate
+    clock.tick(FPS)
+
+
+# Quit Pygame
+pygame.quit()
