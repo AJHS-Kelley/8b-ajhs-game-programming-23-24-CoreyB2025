@@ -46,7 +46,7 @@ def start_screen():
     screen.fill(WHITE)
     show_text_on_screen("WELCOME!", 60, HEIGHT // 7)
     show_text_on_screen("Ball Container", 50, HEIGHT // 4)
-    show_text_on_screen("Push to start like a C class Benz...", 30, HEIGHT // 3)
+    show_text_on_screen("Push any key to begin...", 30, HEIGHT // 3)
     show_text_on_screen("Move the platform with arrow keys...", 30, HEIGHT // 2)
     pygame.display.flip()
     wait_for_key()
@@ -140,10 +140,10 @@ while game_running:
     logData.write(f"PLATFORM_HEIGHT: {PLATFORM_HEIGHT}\n")
 
     # Check if the player advances to the next level
-    if score >= current_level * 5:
+    if score >= current_level * 4:
         current_level += 1
         ball_pos = [WIDTH // 2, HEIGHT // 2]
-        ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]  # Randomize the ball speed
+        ball_speed = [random.uniform(2, 4), random.uniform(2, 4)]  # Make ball speed faster
         platform_color = change_platform_color()
 
     # Check if the ball falls off the screen
